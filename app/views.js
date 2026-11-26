@@ -144,6 +144,9 @@ export function economyView() {
   </div>`;
 }
 
+// Region shares divide by 84.12: populations are in thousands and sum to
+// 8,412 thousand, so 84.12 is the total in hundreds of thousands and
+// population / 84.12 is the percentage share of Meridia.
 export function peopleView() {
   return `
   <section class="page-head">
