@@ -78,6 +78,8 @@ export const SECTORS = [
 ];
 
 // Population by region, 2025 (thousands). Sums to 8,412 thousand.
+// Shares shown elsewhere divide by 84.12 — the total in hundreds of
+// thousands — so population / 84.12 gives the percentage share.
 export const REGIONS = [
   { name: 'Aldgate', population: 2140, density: 412, urban: 88.4, capital: 'Aldgate City' },
   { name: 'Branton', population: 1860, density: 238, urban: 81.2, capital: 'Branton' },
