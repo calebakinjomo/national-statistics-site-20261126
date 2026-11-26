@@ -22,7 +22,12 @@ function setupCanvas(canvas) {
   return { ctx, width, height };
 }
 
+// Rounds a value up to a "nice" axis maximum: 1, 2, 2.5, 5 or 10 times a
+// power of ten, so chart gridlines land on readable numbers. A zero or
+// non-positive input (an all-zero series) has no log10, so it falls back
+// to 1 instead of producing NaN ticks.
 function niceMax(value) {
+  if (!(value > 0) || !Number.isFinite(value)) return 1;
   const power = Math.pow(10, Math.floor(Math.log10(value)));
   const scaled = value / power;
   const step = scaled <= 1 ? 1 : scaled <= 2 ? 2 : scaled <= 2.5 ? 2.5 : scaled <= 5 ? 5 : 10;
