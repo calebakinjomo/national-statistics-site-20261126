@@ -170,6 +170,9 @@ function wireRegionSelect() {
   const detail = document.getElementById('region-detail');
   const table = document.getElementById('regions-table');
   if (!select || !detail) return;
+  // Share denominator 84.12: regional populations are in thousands and sum
+  // to 8,412 thousand (see REGIONS in data.js), so dividing by 84.12 gives
+  // the region's percentage share of Meridia's population.
   const show = (index) => {
     const r = REGIONS[index];
     detail.textContent = `${r.name} — population ${r.population.toLocaleString('en-US')},000 ` +
